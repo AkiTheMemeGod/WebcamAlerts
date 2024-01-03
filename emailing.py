@@ -24,7 +24,7 @@ def send_mail(ImgFileName, From, To):
     s.ehlo()
     s.starttls()
     s.ehlo()
-    s.login("akis.pwdchecker@gmail.com", "tjjqhaifdobuluhg")
+    s.login("akis.pwdchecker@gmail.com", password=os.getenv("mailpwd"))
     s.sendmail(From, To, msg.as_string())
     s.quit()
 
